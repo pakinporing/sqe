@@ -76,15 +76,15 @@ const Product = sequelize.define(
   }
 );
 
-Product.findAll({
-  attributes: [
-    'CategoryID',
-    [sequelize.fn('COUNT', sequelize.col('ProductID')), 'numProduct']
-  ],
-  where: {},
-  order: [['price', 'DESC']],
-  group: 'CategoryID'
-}).then(nice);
+// Product.findAll({
+//   attributes: [
+//     'CategoryID',
+//     [sequelize.fn('COUNT', sequelize.col('ProductID')), 'numProduct']
+//   ],
+//   where: {},
+//   order: [['price', 'DESC']],
+//   group: 'CategoryID'
+// }).then(nice);
 
 // Product.findAll({
 //   attributes: [
