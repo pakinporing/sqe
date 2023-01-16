@@ -66,4 +66,19 @@ const Supplier = sequelize.define(
     timestamps: false
   }
 );
-module.exports;
+
+Category.hasMany(Product, {
+  foreignKey: 'CategoryID'
+});
+Product.belongsTo(Category, {
+  foreignKey: 'CategoryID'
+});
+
+Supplier.hasMany(Product, {
+  foreignKey: 'SupplierID'
+});
+Product.belongsTo(Supplier, {
+  foreignKey: 'SupplierID'
+});
+
+module.exports = { sequelize, Category, Product, Supplier };
